@@ -1,0 +1,271 @@
+@charset "UTF-8";
+.extra-content {
+    display: none; /* Initially hidden */
+  }
+.button-container {
+     display: flex;
+     justify-content: center; /* Center horizontally */
+     margin-top: 20px; /* Optional: Adds some space above the buttons */
+ }
+
+.view-more-btn, .view-less-btn {
+     margin: 0 10px; /* Adds space between the buttons */
+     padding: 10px 20px; /* Adds some padding for better appearance */
+     font-size: 16px; /* Increases font size for readability */
+     cursor: pointer; /* Changes cursor to pointer on hover */
+     background-color: blue;
+     color: white; /* White text color for contrast */
+     border: none; /* Removes default border */
+     border-radius: 5px; /* Adds rounded corners */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.product-image {
+    flex: 2;
+    text-align: center;
+    
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
+    width: 500px;
+    height: 400px;
+}
+
+.thumbnail-images img {
+    width: 90px;
+    height: auto;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.product-details {
+    flex: 3;
+    padding: 0 20px;
+}
+
+.product-details h1 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.price {
+    font-size: 20px;
+    color: #ff0000;
+}
+
+.discount {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 16px;
+}
+
+.discount-percentage {
+    color: #ff6600;
+    font-weight: bold;
+}
+
+.product-details p {
+    margin: 10px 0;
+}
+
+.buy-now, .add-to-cart {
+    background-color: #ff6600;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.buy-now:hover, .add-to-cart:hover {
+    background-color: #ff5500;
+}
+
+.ppp {
+font-family: Arial, sans-serif;
+margin: 20px;
+ }
+.containerr {
+    max-width: 800px;
+    margin: 0 auto;
+}
+h2 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+.product-detailss {
+    display: flex;
+    justify-content: space-between;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    width: 48%;
+    font-size: 0.9rem;
+}
+.tips {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+.tips p {
+    margin: 5px 0;
+}
+.img1111111111{
+	text-align: center;
+
+}
+.rating-container {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h3 {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.overall-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.score {
+    font-size: 32px;
+    color: #333;
+    margin-right: 8px;
+}
+
+.out-of {
+    font-size: 18px;
+    color: #888;
+}
+
+.stars {
+    color: #FFD700;
+    margin-right: 8px;
+}
+
+.star {
+    font-size: 20px;
+}
+
+.rating-count {
+    font-size: 14px;
+    color: #777;
+}
+
+.rating-breakdown {
+    text-align: left;
+}
+
+.star-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.bar {
+    background-color: #e0e0e0;
+    width: 200px;
+    height: 10px;
+    margin: 0 10px;
+    position: relative;
+}
+
+.filled-bar {
+    background-color: #FFD700;
+    height: 100%;
+}
+
+.count {
+    font-size: 14px;
+    color: #555;
+}
+.container01 {
+    max-width: 1200px;
+    margin: 30px;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    
+    
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+
+
+.card-container01 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 180px;
+    padding: 10px;
+    text-align: center;
+    flex: 1 1 180px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.price01 {
+    font-size: 18px;
+    color: #e60023;
+    font-weight: bold;
+}
+
+.discount01 {
+    font-size: 14px;
+    color: #888;
+    margin-left: 5px;
+}
+
+.rating01 {
+    font-size: 12px;
+    color: #ff9900;
+    margin-top: 5px;
+}
+.qwe{
+	font-size:20px;
+	text-align:center;
+}
+    

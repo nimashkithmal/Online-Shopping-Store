@@ -1,0 +1,17 @@
+package genarics;
+
+public class InventoryManager {
+
+	public static void main(String[] args) {
+
+		GenericInventory obj1 =new GenericInventory();
+		GenericInventory obj2 = new GenericInventory();
+		
+		obj1.calcuteAverage(null);
+		obj1.calcuteMinium(null);
+		
+		obj2.calcuteAverage(null);
+		obj2.calcuteMinium(null);
+	}
+
+}

@@ -1,0 +1,28 @@
+package genarics;
+
+import java.lang.annotation.ElementType;
+
+public class GenericInventory {
+	//1
+	public <T extends Number> void calcuteAverage(T[] numArr) {
+		double total =0;
+		double count=0;
+		for(T element : numArr) {
+			total=total+element.doubleValue();
+			count++;
+		}
+		double avg=total/count;
+		System.out.println("Average of Array :" +avg);
+	}
+	//2
+	public  <T extends Number> void calcuteMinium(T[] numArr) {
+		double min = numArr[0].doubleValue();
+		for(T element : numArr) {
+			if(min> element.doubleValue()) {
+				min=element.doubleValue();
+			}
+		}
+		System.out.println("Minium value of the array :" +min);
+	}
+
+}

@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\Users\HDK IT\New folder\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3328784332.index
+3642861819.index
+3604701397.index
+4137157180.index
+1870839445.index
+4015008207.index

@@ -1,0 +1,15 @@
+package genarics;
+
+public class GenericInventory {
+	//1
+	public <T extends Number> void calcuteAverage(T[] numArr) {
+		for(T element : numArr) {
+			element.doubleValue();
+		}
+	}
+	//2
+	public  <T extends Number> void calcuteMinium(T[] numArr) {
+		
+	}
+
+}

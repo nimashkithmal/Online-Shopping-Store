@@ -1,0 +1,34 @@
+package onlineEShoppingStore;
+
+import java.io.IOException;
+import java.util.List;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/KithmalDeleteServlet")
+public class KithmalDeleteServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Not used, but can be implemented if needed.
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String id = request.getParameter("id");
+
+        boolean isTrue = KithmalEShoppingController.deleteData(id);
+        if (isTrue) {
+            String alertMessage = "Data Delete Successful";
+            response.getWriter().println("<script>alert('" + alertMessage + "'); window.location.href='KithmalGetAllServlet';</script>");
+        } else {
+            List<KithmalEShoppingModel> productDetails = KithmalEShoppingController.getById(id);
+            request.setAttribute("productDetails", productDetails);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("kithmalWrong.jsp");
+            dispatcher.forward(request, response);
+        }
+    }
+}

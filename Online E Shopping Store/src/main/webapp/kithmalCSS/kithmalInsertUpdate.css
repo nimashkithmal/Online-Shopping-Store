@@ -1,0 +1,205 @@
+@charset "UTF-8";
+
+/* Body Styling */
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, #C0C0C0, #4682B4);
+    margin: 0;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Title Styling */
+/* Specific Heading Animation */
+h2 {
+    font-size: 3rem; /* Increased font size for more impact */
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Increased letter-spacing */
+    font-weight: 700;
+    color: #333;
+    background: linear-gradient(90deg, #ff6b6b, #ffcc80);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeIn 1s ease-out, bounceIn 1s ease-out;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5) translateY(-100px); /* Start small and off-screen */
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1); /* Scale up a little bigger */
+        opacity: 1; /* Make fully visible */
+    }
+    100% {
+        transform: scale(1) translateY(0); /* End at normal size and position */
+    }
+}
+
+
+/* Form Styling */
+form {
+    width: 100%;
+    max-width: 600px;
+    background: #F0F8FF;
+    padding: 80px;
+    border-radius: 16px;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    border: 4px solid #42a5f5;
+    transition: transform 0.3s ease;
+}
+
+form:hover {
+    transform: translateY(-4px);
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-spacing: 0;
+    margin-top: 15px;
+}
+
+td {
+    padding: 14px;
+    color: #555;
+    font-size: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+td:first-child {
+    font-weight: 600;
+    color: #42a5f5;
+    width: 40%;
+}
+
+/* Input Fields */
+input[type="text"], 
+input[type="number"], 
+input[type="email"], 
+input[type="date"], 
+select {
+    width: 100%;
+    padding: 20px;
+    margin-top: 8px;
+    border: 2px solid #42a5f5;
+    border-radius: 10px;
+    background-color: #fafafa;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus, 
+input[type="number"]:focus, 
+input[type="email"]:focus, 
+input[type="date"]:focus, 
+select:focus {
+    border-color: #ff8a65;
+    background-color: #fff3e0;
+    outline: none;
+}
+
+/* Button Styling */
+button, input[type="submit"] {
+    background-color: #0000ff;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #ff7043;
+    transform: scale(1.05);
+}
+
+input[type="submit"] {
+    width: 100%;
+    margin-top: 30px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    td {
+        display: block;
+        width: 100%;
+        padding: 12px;
+    }
+
+    td:first-child {
+        font-weight: bold;
+        margin-bottom: 4px;
+    }
+
+    form {
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    button, input[type="submit"] {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+}
+.qwert {
+    display: flex; /* Align items in a row */
+    justify-content: center; /* Center the button horizontally */
+   
+}
+
+/* Styles for the video ad */
+.video-ad-container {
+    position: relative;
+    width: 80%;
+    max-width: 640px;
+    margin: 20px auto;
+    text-align: center;
+    
+}
+
+video {
+   
+    border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#pl {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 8px 12px;
+    background-color: rgb(255, 0, 0);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#pl:hover {
+    background-color: #d32f2f;
+}
+
+
+
+

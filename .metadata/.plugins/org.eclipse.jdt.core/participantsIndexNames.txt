@@ -1,0 +1,15 @@
+INDEX VERSION 1.134
+C:\Users\HDK IT\New folder\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1977192129.index
+\Online E Shopping Store2\src\main\java
+C:\Users\HDK IT\New folder\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1212213722.index
+\images_chnaging\src\main\java
+C:\Users\HDK IT\New folder\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3708536011.index
+\PHP\src\main\java
+C:\Users\HDK IT\New folder\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2751514696.index
+\pp\src\main\java
+C:\Users\HDK IT\New folder\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2609635756.index
+\Online E Shopping Store\src\main\java
+C:\Users\HDK IT\New folder\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\768631592.index
+\Online E Shopping Store\src\main\java
+C:\Users\HDK IT\New folder\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3840232441.index
+\pp\src\main\java
