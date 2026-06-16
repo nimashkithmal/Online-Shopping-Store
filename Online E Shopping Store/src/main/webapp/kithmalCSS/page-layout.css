@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+.page-shell {
+    max-width: 1200px;
+    margin: 24px auto 48px;
+    padding: 0 24px;
+}
+
+.page-title {
+    margin: 0 0 20px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.card-surface {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+    padding: 24px;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+.action-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: #2563eb;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+}
+
+.btn-danger {
+    background: #dc2626;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background: #b91c1c;
+}
+
+.inline-input {
+    min-width: 96px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    padding: 9px 10px;
+}
+
+.status-card {
+    text-align: center;
+}
+
+.status-card h1 {
+    margin: 0 0 10px;
+    font-size: 1.8rem;
+    color: #0f172a;
+}
+
+.status-card p {
+    margin: 0 0 16px;
+    color: #475569;
+}

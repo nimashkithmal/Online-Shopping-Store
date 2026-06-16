@@ -1,40 +1,43 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+    String ctx = request.getContextPath();
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add to Cart Details</title>
-    <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/kithmalCSS/kithmalInsertUpdate.css">
-    <link rel="stylesheet" href="JS/new.css">
-    
-    
-    
-    
+    <title>Add Product | AmazeMarket</title>
+    <link rel="stylesheet" href="<%= ctx %>/kithmalCSS/theme.css">
+    <link rel="stylesheet" href="<%= ctx %>/kithmalCSS/kithmalInsertUpdate.css">
+    <link rel="stylesheet" href="<%= ctx %>/kithmalCSS/page-layout.css">
+    <link rel="stylesheet" href="<%= ctx %>/JS/new.css">
 </head>
 <body>
+<jsp:include page="/kithmalheader.jsp" />
 
-<h2>Enter Add to Cart Details</h2>
+<main class="main-content page-shell">
+<h2 class="page-title">Add Product Details</h2>
 <div class="slideshow-container">
         <div class="mySlides fade">
-            <img src="kithmaImages/kith4.jpeg" style="width:100%">
+            <img src="<%= ctx %>/kithmaImages/kith4.jpeg" style="width:100%">
         </div>
 
         
         <div class="mySlides fade">
-            <img src="kithmaImages/kith5.jpeg" style="width:100%">
+            <img src="<%= ctx %>/kithmaImages/kith5.jpeg" style="width:100%">
         </div>
         <div class="mySlides fade">
-            <img src="kithmaImages/kith1.jpeg" style="width:100%">
+            <img src="<%= ctx %>/kithmaImages/kith1.jpeg" style="width:100%">
         </div>
 
         
         <div class="mySlides fade">
-            <img src="kithmaImages/kith2.jpeg" style="width:100%">
+            <img src="<%= ctx %>/kithmaImages/kith2.jpeg" style="width:100%">
         </div>
         <div class="mySlides fade">
-            <img src="kithmaImages/kith3.jpeg" style="width:100%">
+            <img src="<%= ctx %>/kithmaImages/kith3.jpeg" style="width:100%">
         </div>
     </div>
 
@@ -42,7 +45,7 @@
 
 <div class="video-ad-container">
         <video id="adVideo" width="500px" height="500px" autoplay muted controls>
-            <source src="kithmalCSS/video.mp4" type="video/mp4">
+            <source src="<%= ctx %>/kithmalCSS/video.mp4" type="video/mp4">
            
         </video>
         <button id="pl" onclick="skipAd()">Skip Ad</button>
@@ -50,7 +53,7 @@
 
 
 
-    <form action="KithmalInsertServlet" method="post">
+    <form action="<%= ctx %>/KithmalInsertServlet" method="post" class="card-surface">
         <table>
         <tr>
     <td>Product Name:</td>
@@ -208,11 +211,10 @@
     return isValid;
 }
     </script>
-    
-    <script src="JS/script.js"></script>
-    <script src="JS/new.js"></script>
-    
-   
-    
+</main>
+
+    <jsp:include page="/kithmalfooter.jsp" />
+    <script src="<%= ctx %>/JS/script.js"></script>
+    <script src="<%= ctx %>/JS/new.js"></script>
 </body>
 </html>

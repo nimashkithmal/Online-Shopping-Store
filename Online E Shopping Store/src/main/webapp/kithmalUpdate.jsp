@@ -1,14 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+    String ctx = request.getContextPath();
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Product</title>
-    <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/kithmalCSS/kithmalInsertUpdate.css">
-    
+    <title>Update Product | AmazeMarket</title>
+    <link rel="stylesheet" href="<%= ctx %>/kithmalCSS/theme.css">
+    <link rel="stylesheet" href="<%= ctx %>/kithmalCSS/kithmalInsertUpdate.css">
+    <link rel="stylesheet" href="<%= ctx %>/kithmalCSS/page-layout.css">
 </head>
 <body>
+<jsp:include page="/kithmalheader.jsp" />
 <%
     String id = request.getParameter("id");
     String product_Name = request.getParameter("product_Name");
@@ -29,9 +34,9 @@
         return;
     }
 %>
-
-    <h2>Update Product</h2>
-    <form action="KithmalUpdateServlet" method="post">
+<main class="main-content page-shell">
+    <h2 class="page-title">Update Product</h2>
+    <form action="<%= ctx %>/KithmalUpdateServlet" method="post" class="card-surface">
         <table>
             <tr>
                 <td><label for="id">ID:</label></td>
@@ -59,72 +64,31 @@
     <td><label for="color">Color:</label></td>
     <td>
     <div id="color-container">
-        <select id="color" name="color[]" required>
-            <option value="Black">Black</option>
-            <option value="White">White</option>
-            <option value="Brown">Brown</option>
-            <option value="Navy Blue">Navy Blue</option>
-            <option value="Grey">Grey</option>
-            <option value="Red">Red</option>
+        <select id="color" name="color" required>
+            <option value="Black" <%= "Black".equals(color) ? "selected" : "" %>>Black</option>
+            <option value="White" <%= "White".equals(color) ? "selected" : "" %>>White</option>
+            <option value="Brown" <%= "Brown".equals(color) ? "selected" : "" %>>Brown</option>
+            <option value="Navy Blue" <%= "Navy Blue".equals(color) ? "selected" : "" %>>Navy Blue</option>
+            <option value="Grey" <%= "Grey".equals(color) ? "selected" : "" %>>Grey</option>
+            <option value="Red" <%= "Red".equals(color) ? "selected" : "" %>>Red</option>
         </select>
     </div>
-    <div class="qwert">
-    <button type="button" onclick="addColor()">Add Another Color</button>
-    </div>
 </td>
-<script>
-    function addColor() {
-        const container = document.getElementById('color-container');
-        const newSelect = document.createElement('select');
-        newSelect.name = 'color[]';
-        newSelect.required = true;
-        newSelect.innerHTML = `
-            <option value="Black">Black</option>
-            <option value="White">White</option>
-            <option value="Brown">Brown</option>
-            <option value="Navy Blue">Navy Blue</option>
-            <option value="Grey">Grey</option>
-            <option value="Red">Red</option>
-        `;
-        container.appendChild(newSelect);
-    }
-</script>
 </tr>
     <td><label for="size">Size:</label></td>
     <td>
     <div id="size-container">
-        <select id="size" name="size[]" required>
-            <option value="39">39</option>
-            <option value="40">40</option>
-            <option value="41">41</option>
-            <option value="42">42</option>
-            <option value="43">43</option>
-            <option value="44">44</option>
-            <option value="45">45</option>
+        <select id="size" name="size" required>
+            <option value="39" <%= "39".equals(size) ? "selected" : "" %>>39</option>
+            <option value="40" <%= "40".equals(size) ? "selected" : "" %>>40</option>
+            <option value="41" <%= "41".equals(size) ? "selected" : "" %>>41</option>
+            <option value="42" <%= "42".equals(size) ? "selected" : "" %>>42</option>
+            <option value="43" <%= "43".equals(size) ? "selected" : "" %>>43</option>
+            <option value="44" <%= "44".equals(size) ? "selected" : "" %>>44</option>
+            <option value="45" <%= "45".equals(size) ? "selected" : "" %>>45</option>
         </select>
     </div>
-    <div class="qwert">
-    <button type="button" onclick="addSize()">Add Another Size</button>
-    </div>
 </td>
-<script>
-    function addSize() {
-        const container = document.getElementById('size-container');
-        const newSelect = document.createElement('select');
-        newSelect.name = 'size[]';
-        newSelect.required = true;
-        newSelect.innerHTML = `
-            <option value="39">39</option>
-            <option value="40">40</option>
-            <option value="41">41</option>
-            <option value="42">42</option>
-            <option value="43">43</option>
-            <option value="44">44</option>
-            <option value="45">45</option>
-        `;
-        container.appendChild(newSelect);
-    }
-</script>
 
 
             <tr>
@@ -168,5 +132,7 @@
             </tr>
         </table>
     </form>
+</main>
+<jsp:include page="/kithmalfooter.jsp" />
 </body>
 </html>

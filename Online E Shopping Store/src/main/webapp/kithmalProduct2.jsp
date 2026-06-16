@@ -1,17 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+    String ctx = request.getContextPath();
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Page</title>
-  <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/kithmalCSS/kithmalProduct2.css">
-  <jsp:include page="/kithmalheader.jsp" />
-  
-
+  <title>iPhone Series | AmazeMarket</title>
+  <link rel="stylesheet" href="<%= ctx %>/kithmalCSS/theme.css">
+  <link rel="stylesheet" href="<%= ctx %>/kithmalCSS/kithmalProduct2.css">
+  <link rel="stylesheet" href="<%= ctx %>/kithmalCSS/page-layout.css">
 </head>
 <body>
+<jsp:include page="/kithmalheader.jsp" />
 
   <div class="container">
         <div class="product-image">
@@ -76,8 +79,8 @@
     </div>
 
     <div class="button-container">
-        <button class="button buy-now" onclick="location.href='kithmalInsert.jsp'">Buy Now</button>
-        <button class="button add-to-cart" onclick="location.href='kithmalInsert.jsp'">Add to Cart</button>
+        <button class="button buy-now" onclick="location.href='<%= ctx %>/kithmalInsert.jsp'">Buy Now</button>
+        <button class="button add-to-cart" onclick="location.href='<%= ctx %>/kithmalInsert.jsp'">Add to Cart</button>
     </div>
 </div>
   </div>
@@ -147,7 +150,7 @@
                 <span class="count">8</span>
             </div>
             <div class="button-container">
-       			<button class="button add-to-cart" onclick="location.href='kithmalInsert.jsp'">Review and Comment</button>
+       			<button class="button add-to-cart" onclick="location.href='<%= ctx %>/kithmalInsert.jsp'">Review and Comment</button>
     		</div>
         </div>
         
@@ -163,7 +166,7 @@
         <button class="view-less-btn" onclick="showLess()" style="display: none;">View Less</button>
     </div>
 
-    <div id="extraContent" style="display: none;">
+    <div id="extraContentPlaceholder" style="display: none;">
         <!-- Your extra content goes here -->
         <p>This is the extra content that is revealed when you click "View More".
     </div>
@@ -227,7 +230,7 @@
     </div>
     
     <footer>
-    <jsp:include page="/kithmalfootersp.jsp" />
+    <jsp:include page="/kithmalfooter.jsp" />
     </footer>
     
     

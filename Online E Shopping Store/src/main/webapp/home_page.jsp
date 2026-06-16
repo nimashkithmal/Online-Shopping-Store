@@ -1,412 +1,419 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+    String ctx = request.getContextPath();
+%>
 <!DOCTYPE html>
-<html>
-
-<!-- HTML head section -->  
-
+<html lang="en">
 <head>
-    <title> Home Page </title>
-    <meta charset="UTF-8" />
-    <meta http-equiv="x-UV-Comatible" content="IE=edge" />
-    <meta name="viwepoint" content="width=device-width,initial-scale=1.0" />
-    <link rel="stylesheet" href="kithmalHomepage/kithmalHomepage.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-     <!-- header -->
-     <header class="header">
-        <nav class="nav1">
-          <a href="home_page.html"><img src="Homepage_images/logo.png" alt="LOGO" class="LOGO"></a>
-          <h1 class="appm">AmazeMaet</h1>
-          <div class="box">
-              <input type="searchbox" placeholder="Search" class="topsearch">
-    
-          </div>
-          <div class="fbox">
-          <img src="Homepage_images/icons8-help-50.png" alt="help" class="help">
-          <a href="user_pro.html"> <img src="Homepage_images/icons8-user-100.png" alt="user" class="user"></a>
-          </div>
-      </nav>
-    
-      <!-- Navigation  bar -->
-      <nav calss="nav">
-          <ul>
-              <li><a href="home_page.html"><b>Home</b></a></li>
-              <li><a href=""><b>Education</b></a></li>
-              <li><a href=""><b>Business</b></a></li>
-              <li><a href=""><b>Game</b></a></li>
-              <li><a href="Addproduct.jsp" onclick="return customFunction()"><b>Add Product</b></a></li>
-              <li><a href="" style="border-right: 0;"><b>Health & Fitness</b></a></li>
-          </ul>
-      </nav>
-    
-        
-      </header>
-      
-      
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AmazeMarket | Online Shopping Store</title>
+    <link rel="stylesheet" href="<%= ctx %>/kithmalCSS/theme.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
-
-<!-- HTML body section -->
-
 <body>
-   
 
-    <!-- Slider preview  -->
-    <div class="container swiper mySwiper">
-        <div class="content swiper-wrapper">
-            <div class="slides swiper-slide ">
-                <img class="img" src="Homepage_images\abs1.jpg">
-                <div class="img_overlay">
-                    <h2>Order Now Product</h2>
-                    <p>You can donload newly updated product </p>
-                    <p>Quickly download & try it!</p>
+<jsp:include page="/kithmalheader.jsp" />
+
+<!-- Hero Slider -->
+<section class="hero-slider">
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="<%= ctx %>/Homepage_images/abs1.jpg" alt="Featured products">
+                <div class="slide-overlay">
+                    <h2>Discover Premium Products</h2>
+                    <p>Shop the latest arrivals with exclusive online deals.</p>
+                    <a href="#electronics" class="slide-cta">Shop Now</a>
                 </div>
             </div>
-
-            <div class="slides swiper-slide ">
-                <img class="img" src="Homepage_images\up.jpeg">
-                <div class="img_overlay">
-                    <h2>For Business </h2>
-                    <p>you can handle your business within</p>
-                    <p><b style="color: red;">one</b> click</p>
+            <div class="swiper-slide">
+                <img src="<%= ctx %>/Homepage_images/up.jpeg" alt="Business solutions">
+                <div class="slide-overlay">
+                    <h2>Built for Business</h2>
+                    <p>Manage your orders and inventory in one place.</p>
+                    <a href="<%= ctx %>/kithmalDisplayEShopping.jsp" class="slide-cta">View Orders</a>
                 </div>
             </div>
-
-            <div class="slides swiper-slide ">
-                <img class="img" src="Homepage_images/tr.jpg">
-                <div class="img_overlay">
-                    <h2>Travel with us</h2>
-                    <p>Do You have a Travel guide?</p>
-                    <p>Try to travel with our travel guide </p>
+            <div class="swiper-slide">
+                <img src="<%= ctx %>/Homepage_images/tr.jpg" alt="Travel essentials">
+                <div class="slide-overlay">
+                    <h2>Travel Essentials</h2>
+                    <p>Everything you need for your next adventure.</p>
+                    <a href="#phones" class="slide-cta">Explore</a>
                 </div>
             </div>
-
-            <div class="slides swiper-slide ">
-                <img class="img" src="Homepage_images\abs.jpg">
-                <div class="img_overlay">
-                    <h2>Uploade your product</h2>
-                    <p>If you are a product developer you can uploade your own product</p>
+            <div class="swiper-slide">
+                <img src="<%= ctx %>/Homepage_images/abs.jpg" alt="Sell your products">
+                <div class="slide-overlay">
+                    <h2>Sell on AmazeMarket</h2>
+                    <p>List your products and reach thousands of customers.</p>
+                    <a href="<%= ctx %>/kithmalInsert.jsp" class="slide-cta">Add Product</a>
                 </div>
             </div>
-
-            <div class="slides swiper-slide ">
-                <img class="img" src="Homepage_images/abs3.jpg">
-                <div class="img_overlay">
-                    <h2>Capture beautiful moment</h2>
-                    <p>Try new pose with Different filters</p>
+            <div class="swiper-slide">
+                <img src="<%= ctx %>/Homepage_images/abs3.jpg" alt="New arrivals">
+                <div class="slide-overlay">
+                    <h2>New Arrivals Daily</h2>
+                    <p>Fresh deals updated every day. Don't miss out.</p>
+                    <a href="#shoes" class="slide-cta">Browse Deals</a>
                 </div>
             </div>
         </div>
-        <div class="swiper-button-next btn"></div>
-        <div class="swiper-button-prev btn"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
         <div class="swiper-pagination"></div>
     </div>
+</section>
 
-    <!-- app content -->
+<main class="main-content">
 
-
-    
-    <!--Home section start -->
-
-    <section clas="home" id="home">
-        <div class="section-wrapper">
-        <div class="content">
-            <h3>Electronics Items</h3>
+    <!-- Electronics -->
+    <section id="electronics">
+        <div class="section-header">
+            <h3>Electronics</h3>
+            <a href="#">View all</a>
         </div>
-          <p class="qwe">
-
-        <div class="container01">
-            <div class="card-container01">
-                <div class="card">
-                    <img src="Homepage_images/4.jpg" alt="Speaker">
+        <div class="product-grid">
+            <article class="product-card">
+                <div class="product-card-image"><img src="<%= ctx %>/Homepage_images/4.jpg" alt="Speaker"></div>
+                <div class="product-card-body">
                     <p>2pcs Set Speaker Luxury Women Simple Dial...</p>
-                    <span class="price01">Rs.4200</span> <span class="discount01">-72%</span>
-                    <span class="rating01">⭐⭐⭐⭐⭐ (119)</span>
+                    <div class="product-price-row">
+                        <span class="price-current">Rs. 4,200</span>
+                        <span class="badge-discount">-72%</span>
+                    </div>
+                    <span class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9733; (119)</span>
                 </div>
-                <div class="card">
-                    <img src="Homepage_images/Headset wholesaler.jpg" alt="Head phone">
+            </article>
+            <article class="product-card">
+                <div class="product-card-image"><img src="<%= ctx %>/Homepage_images/Headset wholesaler.jpg" alt="Headphone"></div>
+                <div class="product-card-body">
                     <p>20pcs/can High Elastic Hair Ring French Style...</p>
-                    <span class="price01">Rs.3890</span> <span class="discount01">-50%</span>
-                    <span class="rating01">⭐⭐⭐⭐⭐ (114)</span>
+                    <div class="product-price-row">
+                        <span class="price-current">Rs. 3,890</span>
+                        <span class="badge-discount">-50%</span>
+                    </div>
+                    <span class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9733; (114)</span>
                 </div>
-                <div class="card">
-                    <img src="Homepage_images/images (1).jpg" alt="Elacteric malti meters">
+            </article>
+            <article class="product-card">
+                <div class="product-card-image"><img src="<%= ctx %>/Homepage_images/images (1).jpg" alt="Multi meter"></div>
+                <div class="product-card-body">
                     <p>Electronic Multi meters Electromagnetic...</p>
-                    <span class="price01">Rs.500</span> <span class="discount01">-67%</span>
-                    <span class="rating01">⭐⭐⭐⭐ (225)</span>
+                    <div class="product-price-row">
+                        <span class="price-current">Rs. 500</span>
+                        <span class="badge-discount">-67%</span>
+                    </div>
+                    <span class="product-rating">&#9733;&#9733;&#9733;&#9733; (225)</span>
                 </div>
-                <div class="card">
-                    <img src="Homepage_images/6628c0f1a9245.jpg" alt="Pen">
+            </article>
+            <article class="product-card">
+                <div class="product-card-image"><img src="<%= ctx %>/Homepage_images/6628c0f1a9245.jpg" alt="Pen"></div>
+                <div class="product-card-body">
                     <p>Autumn Winter Flannel Pen Newborn...</p>
-                    <span class="price01">Rs.2,154</span> <span class="discount01">-73%</span>
-                    <span class="rating01">⭐⭐⭐⭐⭐ (15)</span>
+                    <div class="product-price-row">
+                        <span class="price-current">Rs. 2,154</span>
+                        <span class="badge-discount">-73%</span>
+                    </div>
+                    <span class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9733; (15)</span>
                 </div>
-                <div class="card">
-                    <img src="Homepage_images/6628c0f1a9245.jpg" alt="printer">
-                    <p>Creative Card printer good condtion...</p>
-                    <span class="price01">Rs.4620</span> <span class="discount01">-70%</span>
-                    <span class="rating01">⭐⭐⭐⭐ (20)</span>
+            </article>
+            <article class="product-card">
+                <div class="product-card-image"><img src="<%= ctx %>/Homepage_images/6628c0f1a9245.jpg" alt="Printer"></div>
+                <div class="product-card-body">
+                    <p>Creative Card printer good condition...</p>
+                    <div class="product-price-row">
+                        <span class="price-current">Rs. 4,620</span>
+                        <span class="badge-discount">-70%</span>
+                    </div>
+                    <span class="product-rating">&#9733;&#9733;&#9733;&#9733; (20)</span>
                 </div>
-
-               
-                </div>
+            </article>
         </div>
-    </div>
-    <div class="section-wrapper">
-        <div class="content">
-            <h3>Shoes Items</h3>
-        </div>
-          <p class="qwe">
-
-        <div class="container01">
-            <div class="card-container01">
-                <div class="card">
-                <a href="kithmalProduct1.jsp">
-                    <img src="Homepage_images/sho2.jpeg" alt="Shoes">
-                    </a>
-                    <p>Men's Running Shoes Breathable and Anti slip Air Cushion Basketball Shoes Walking Sneakers...</p>
-                    <span class="price01">Rs.4,818</span><span class="discount01">Rs. 14,224</span> <span class="discount01">-67%</span>
-                    
-                    <span class="rating01">⭐⭐⭐⭐⭐ (119)</span>
-                    
-                </div>
-                <div class="card">
-                    <img src="Homepage_images/50.png" alt="Shoes">
-                    <p>20pcs/can High Elastic Hair Ring French Style...</p>
-                    <span class="price01">Rs.3890</span> <span class="discount01">-50%</span>
-                    <span class="rating01">⭐⭐⭐⭐⭐ (114)</span>
-                </div>
-                <div class="card">
-                    <img src="Homepage_images/53.png" alt="Shoes">
-                    <p>Electronic Multi meters Electromagnetic...</p>
-                    <span class="price01">Rs.500</span> <span class="discount01">-67%</span>
-                    <span class="rating01">⭐⭐⭐⭐ (225)</span>
-                </div>
-                <div class="card">
-                    <img src="Homepage_images/54.png" alt="Shoes">
-                    <p>Autumn Winter Flannel Pen Newborn...</p>
-                    <span class="price01">Rs.2,154</span> <span class="discount01">-73%</span>
-                    <span class="rating01">⭐⭐⭐⭐⭐ (15)</span>
-                </div>
-                <div class="card">
-                    <img src="Homepage_images/51.png" alt="printer">
-                    <p>Creative Card printer good condtion...</p>
-                    <span class="price01">Rs.4620</span> <span class="discount01">-70%</span>
-                    <span class="rating01">⭐⭐⭐⭐ (20)</span>
-                </div>
-
-               
-                </div>
-        </div>
-    </div>
-        <div class="section-wrapper">
-        <div class="content">
-            <h3>Phones Items</h3>
-        </div>
-        <p class="qwe">
-
-        <div class="container01">
-            <div class="card-container01">
-                <div class="card">
-                <a href="kithmalProduct2.jsp">
-                    <img src="Homepage_images/p1.jpeg" alt="Shoes">
-                    </a>
-                    <p>iPhone 16 Series - (256GB,512GB,1TB)...</p>
-                    <p>iPhone 16 and iPhone 16 Plus will be available in ultramarine, teal, pink, white, and black in 128GB, 256GB, and 512GB storage capacities</p>
-                    <span class="price01">Rs. 299,999</span><span class="discount01">Rs. 349,999</span> <span class="discount01">-14%</span>
-                    <span class="rating01">⭐⭐⭐⭐⭐ (119)</span>
-                </div>
-                <div class="card">
-                    <img src="Homepage_images/p2.jpg" alt="Head phone">
-                    <p>20pcs/can High Elastic Hair Ring French Style...</p>
-                    <span class="price01">Rs.3890</span> <span class="discount01">-50%</span>
-                    <span class="rating01">⭐⭐⭐⭐⭐ (114)</span>
-                </div>
-                <div class="card">
-                    <img src="Homepage_images/p3.jpg" alt="Elacteric malti meters">
-                    <p>Electronic Multi meters Electromagnetic...</p>
-                    <span class="price01">Rs.500</span> <span class="discount01">-67%</span>
-                    <span class="rating01">⭐⭐⭐⭐ (225)</span>
-                </div>
-                <div class="card">
-                    <img src="Homepage_images/p4.jpg" alt="Pen">
-                    <p>Autumn Winter Flannel Pen Newborn...</p>
-                    <span class="price01">Rs.2,154</span> <span class="discount01">-73%</span>
-                    <span class="rating01">⭐⭐⭐⭐⭐ (15)</span>
-                </div>
-                <div class="card">
-                    <img src="Homepage_images/p5.jpg" alt="printer">
-                    <p>Creative Card printer good condtion...</p>
-                    <span class="price01">Rs.4620</span> <span class="discount01">-70%</span>
-                    <span class="rating01">⭐⭐⭐⭐ (20)</span>
-                </div>
-
-               </div>  
-        </div>
-    </div>
-        <div class="section-wrapper">
-        <div class="content">
-            <h3>Jewerly Items</h3>
-        </div>
-       <p class="qwe">
-
-        <div class="container01">
-            <div class="card-container01">
-                <div class="card">
-                    <img src="Homepage_images/j1.jpg" alt="Shoes">
-                    <p>2pcs Set Speaker Luxury Women Simple Dial...</p>
-                    <span class="price01">Rs.4200</span> <span class="discount01">-72%</span>
-                    <span class="rating01">⭐⭐⭐⭐⭐ (119)</span>
-                </div>
-                <div class="card">
-                    <img src="Homepage_images/j2.jpg" alt="Head phone">
-                    <p>20pcs/can High Elastic Hair Ring French Style...</p>
-                    <span class="price01">Rs.3890</span> <span class="discount01">-50%</span>
-                    <span class="rating01">⭐⭐⭐⭐⭐ (114)</span>
-                </div>
-                <div class="card">
-                    <img src="Homepage_images/j3.jpg" alt="Elacteric malti meters">
-                    <p>Electronic Multi meters Electromagnetic...</p>
-                    <span class="price01">Rs.500</span> <span class="discount01">-67%</span>
-                    <span class="rating01">⭐⭐⭐⭐ (225)</span>
-                </div>
-                <div class="card">
-                    <img src="Homepage_images/j4.jpg" alt="Pen">
-                    <p>Autumn Winter Flannel Pen Newborn...</p>
-                    <span class="price01">Rs.2,154</span> <span class="discount01">-73%</span>
-                    <span class="rating01">⭐⭐⭐⭐⭐ (15)</span>
-                </div>
-                <div class="card">
-                    <img src="Homepage_images/6628c0f1a9245.jpg" alt="printer">
-                    <p>Creative Card printer good condtion...</p>
-                    <span class="price01">Rs.4620</span> <span class="discount01">-70%</span>
-                    <span class="rating01">⭐⭐⭐⭐⭐ (20)</span>
-                </div>
-
-               
-                </div>
-        </div>
-    </div>
-        <div class="section-wrapper">
-        <div class="content">
-            <h3>Shirt Items</h3>
-        </div>
-        <p class="qwe">
-
-        <div class="container01">
-            <div class="card-container01">
-                <div class="card">
-                    <img src="Homepage_images/1.jpeg" alt="Shoes">
-                    <p>2pcs Set Speaker Luxury Women Simple Dial...</p>
-                    <span class="price01">Rs.4200</span> <span class="discount01">-72%</span>
-                    <span class="rating01">⭐⭐⭐⭐⭐ (119)</span>
-                </div>
-                <div class="card">
-                    <img src="Homepage_images/28.jpg" alt="Head phone">
-                    <p>20pcs/can High Elastic Hair Ring French Style...</p>
-                    <span class="price01">Rs.3890</span> <span class="discount01">-50%</span>
-                    <span class="rating01">⭐⭐⭐⭐⭐ (114)</span>
-                </div>
-                <div class="card">
-                    <img src="Homepage_images/27.jpg" alt="Elacteric malti meters">
-                    <p>Electronic Multi meters Electromagnetic...</p>
-                    <span class="price01">Rs.500</span> <span class="discount01">-67%</span>
-                    <span class="rating01">⭐⭐⭐⭐ (225)</span>
-                </div>
-                <div class="card">
-                    <img src="Homepage_images/26.jpg" alt="Pen">
-                    <p>Autumn Winter Flannel Pen Newborn...</p>
-                    <span class="price01">Rs.2,154</span> <span class="discount01">-73%</span>
-                    <span class="rating01">⭐⭐⭐⭐⭐ (15)</span>
-                </div>
-                <div class="card">
-                    <img src="Homepage_images/25.jpg" alt="printer">
-                    <p>Creative Card printer good condtion...</p>
-                    <span class="price01">Rs.4620</span> <span class="discount01">-70%</span>
-                    <span class="rating01">⭐⭐⭐⭐ (20)</span>
-                </div>
-
-               
-                </div>
-        </div>
-    </div>
-
     </section>
 
-<!--Footer form fieldset-->
-<div>
-    <form action="">
-        <fieldset borber="3" style="display: flex; height: 200px;">
+    <!-- Shoes -->
+    <section id="shoes">
+        <div class="section-header">
+            <h3>Shoes</h3>
+            <a href="<%= ctx %>/kithmalProduct1.jsp">View all</a>
+        </div>
+        <div class="product-grid">
+            <article class="product-card">
+                <a href="<%= ctx %>/kithmalProduct1.jsp">
+                    <div class="product-card-image"><img src="<%= ctx %>/Homepage_images/sho2.jpeg" alt="Running Shoes"></div>
+                </a>
+                <div class="product-card-body">
+                    <p>Men's Running Shoes Breathable and Anti slip Air Cushion...</p>
+                    <div class="product-price-row">
+                        <span class="price-current">Rs. 4,818</span>
+                        <span class="price-old">Rs. 14,224</span>
+                        <span class="badge-discount">-67%</span>
+                    </div>
+                    <span class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9733; (119)</span>
+                </div>
+            </article>
+            <article class="product-card">
+                <div class="product-card-image"><img src="<%= ctx %>/Homepage_images/50.png" alt="Shoes"></div>
+                <div class="product-card-body">
+                    <p>High Elastic Hair Ring French Style...</p>
+                    <div class="product-price-row">
+                        <span class="price-current">Rs. 3,890</span>
+                        <span class="badge-discount">-50%</span>
+                    </div>
+                    <span class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9733; (114)</span>
+                </div>
+            </article>
+            <article class="product-card">
+                <div class="product-card-image"><img src="<%= ctx %>/Homepage_images/53.png" alt="Shoes"></div>
+                <div class="product-card-body">
+                    <p>Electronic Multi meters Electromagnetic...</p>
+                    <div class="product-price-row">
+                        <span class="price-current">Rs. 500</span>
+                        <span class="badge-discount">-67%</span>
+                    </div>
+                    <span class="product-rating">&#9733;&#9733;&#9733;&#9733; (225)</span>
+                </div>
+            </article>
+            <article class="product-card">
+                <div class="product-card-image"><img src="<%= ctx %>/Homepage_images/54.png" alt="Shoes"></div>
+                <div class="product-card-body">
+                    <p>Autumn Winter Flannel Pen Newborn...</p>
+                    <div class="product-price-row">
+                        <span class="price-current">Rs. 2,154</span>
+                        <span class="badge-discount">-73%</span>
+                    </div>
+                    <span class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9733; (15)</span>
+                </div>
+            </article>
+            <article class="product-card">
+                <div class="product-card-image"><img src="<%= ctx %>/Homepage_images/51.png" alt="Shoes"></div>
+                <div class="product-card-body">
+                    <p>Creative Card printer good condition...</p>
+                    <div class="product-price-row">
+                        <span class="price-current">Rs. 4,620</span>
+                        <span class="badge-discount">-70%</span>
+                    </div>
+                    <span class="product-rating">&#9733;&#9733;&#9733;&#9733; (20)</span>
+                </div>
+            </article>
+        </div>
+    </section>
 
-            
+    <!-- Phones -->
+    <section id="phones">
+        <div class="section-header">
+            <h3>Phones</h3>
+            <a href="<%= ctx %>/kithmalProduct2.jsp">View all</a>
+        </div>
+        <div class="product-grid">
+            <article class="product-card">
+                <a href="<%= ctx %>/kithmalProduct2.jsp">
+                    <div class="product-card-image"><img src="<%= ctx %>/Homepage_images/p1.jpeg" alt="iPhone 16"></div>
+                </a>
+                <div class="product-card-body">
+                    <p>iPhone 16 Series - (256GB, 512GB, 1TB). Available in ultramarine, teal, pink, white, and black.</p>
+                    <div class="product-price-row">
+                        <span class="price-current">Rs. 299,999</span>
+                        <span class="price-old">Rs. 349,999</span>
+                        <span class="badge-discount">-14%</span>
+                    </div>
+                    <span class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9733; (119)</span>
+                </div>
+            </article>
+            <article class="product-card">
+                <div class="product-card-image"><img src="<%= ctx %>/Homepage_images/p2.jpg" alt="Phone"></div>
+                <div class="product-card-body">
+                    <p>High Elastic Hair Ring French Style...</p>
+                    <div class="product-price-row">
+                        <span class="price-current">Rs. 3,890</span>
+                        <span class="badge-discount">-50%</span>
+                    </div>
+                    <span class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9733; (114)</span>
+                </div>
+            </article>
+            <article class="product-card">
+                <div class="product-card-image"><img src="<%= ctx %>/Homepage_images/p3.jpg" alt="Phone"></div>
+                <div class="product-card-body">
+                    <p>Electronic Multi meters Electromagnetic...</p>
+                    <div class="product-price-row">
+                        <span class="price-current">Rs. 500</span>
+                        <span class="badge-discount">-67%</span>
+                    </div>
+                    <span class="product-rating">&#9733;&#9733;&#9733;&#9733; (225)</span>
+                </div>
+            </article>
+            <article class="product-card">
+                <div class="product-card-image"><img src="<%= ctx %>/Homepage_images/p4.jpg" alt="Phone"></div>
+                <div class="product-card-body">
+                    <p>Autumn Winter Flannel Pen Newborn...</p>
+                    <div class="product-price-row">
+                        <span class="price-current">Rs. 2,154</span>
+                        <span class="badge-discount">-73%</span>
+                    </div>
+                    <span class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9733; (15)</span>
+                </div>
+            </article>
+            <article class="product-card">
+                <div class="product-card-image"><img src="<%= ctx %>/Homepage_images/p5.jpg" alt="Phone"></div>
+                <div class="product-card-body">
+                    <p>Creative Card printer good condition...</p>
+                    <div class="product-price-row">
+                        <span class="price-current">Rs. 4,620</span>
+                        <span class="badge-discount">-70%</span>
+                    </div>
+                    <span class="product-rating">&#9733;&#9733;&#9733;&#9733; (20)</span>
+                </div>
+            </article>
+        </div>
+    </section>
 
-            <ul class="unorderd_list" type="none">
-                <li><a href="">Support</a></li>
-                <li><a href="">About Us</a></li>
-                <li><a href="">Contact Us</a></li>
-                <li><a href="home_page.jsp">Home</a></li>
-            </ul>
+    <!-- Jewelry -->
+    <section id="jewelry">
+        <div class="section-header">
+            <h3>Jewelry</h3>
+            <a href="#">View all</a>
+        </div>
+        <div class="product-grid">
+            <article class="product-card">
+                <div class="product-card-image"><img src="<%= ctx %>/Homepage_images/j1.jpg" alt="Jewelry"></div>
+                <div class="product-card-body">
+                    <p>2pcs Set Speaker Luxury Women Simple Dial...</p>
+                    <div class="product-price-row">
+                        <span class="price-current">Rs. 4,200</span>
+                        <span class="badge-discount">-72%</span>
+                    </div>
+                    <span class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9733; (119)</span>
+                </div>
+            </article>
+            <article class="product-card">
+                <div class="product-card-image"><img src="<%= ctx %>/Homepage_images/j2.jpg" alt="Jewelry"></div>
+                <div class="product-card-body">
+                    <p>High Elastic Hair Ring French Style...</p>
+                    <div class="product-price-row">
+                        <span class="price-current">Rs. 3,890</span>
+                        <span class="badge-discount">-50%</span>
+                    </div>
+                    <span class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9733; (114)</span>
+                </div>
+            </article>
+            <article class="product-card">
+                <div class="product-card-image"><img src="<%= ctx %>/Homepage_images/j3.jpg" alt="Jewelry"></div>
+                <div class="product-card-body">
+                    <p>Electronic Multi meters Electromagnetic...</p>
+                    <div class="product-price-row">
+                        <span class="price-current">Rs. 500</span>
+                        <span class="badge-discount">-67%</span>
+                    </div>
+                    <span class="product-rating">&#9733;&#9733;&#9733;&#9733; (225)</span>
+                </div>
+            </article>
+            <article class="product-card">
+                <div class="product-card-image"><img src="<%= ctx %>/Homepage_images/j4.jpg" alt="Jewelry"></div>
+                <div class="product-card-body">
+                    <p>Autumn Winter Flannel Pen Newborn...</p>
+                    <div class="product-price-row">
+                        <span class="price-current">Rs. 2,154</span>
+                        <span class="badge-discount">-73%</span>
+                    </div>
+                    <span class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9733; (15)</span>
+                </div>
+            </article>
+            <article class="product-card">
+                <div class="product-card-image"><img src="<%= ctx %>/Homepage_images/6628c0f1a9245.jpg" alt="Jewelry"></div>
+                <div class="product-card-body">
+                    <p>Creative Card printer good condition...</p>
+                    <div class="product-price-row">
+                        <span class="price-current">Rs. 4,620</span>
+                        <span class="badge-discount">-70%</span>
+                    </div>
+                    <span class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9733; (20)</span>
+                </div>
+            </article>
+        </div>
+    </section>
 
-            <div class="socialmedia_set">
-                <a href="https://www.youtube.com/"><img class="socialmedia" src="Homepage_images/you.png" alt="You tube"></a>
-                <a href="https://www.facebook.com/ "><img class="socialmedia" src="Homepage_images/fb.png" alt=" facebook"></a>
-                <a href="https://www.Twitter.com/"><img class="socialmedia" src="Homepage_images/twitter-logo-png-round-3.png" alt="Twitter"></a>
-            </div>
+    <!-- Shirts -->
+    <section id="shirts">
+        <div class="section-header">
+            <h3>Shirts &amp; Fashion</h3>
+            <a href="#">View all</a>
+        </div>
+        <div class="product-grid">
+            <article class="product-card">
+                <div class="product-card-image"><img src="<%= ctx %>/Homepage_images/1.jpeg" alt="Shirt"></div>
+                <div class="product-card-body">
+                    <p>2pcs Set Speaker Luxury Women Simple Dial...</p>
+                    <div class="product-price-row">
+                        <span class="price-current">Rs. 4,200</span>
+                        <span class="badge-discount">-72%</span>
+                    </div>
+                    <span class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9733; (119)</span>
+                </div>
+            </article>
+            <article class="product-card">
+                <div class="product-card-image"><img src="<%= ctx %>/Homepage_images/28.jpg" alt="Shirt"></div>
+                <div class="product-card-body">
+                    <p>High Elastic Hair Ring French Style...</p>
+                    <div class="product-price-row">
+                        <span class="price-current">Rs. 3,890</span>
+                        <span class="badge-discount">-50%</span>
+                    </div>
+                    <span class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9733; (114)</span>
+                </div>
+            </article>
+            <article class="product-card">
+                <div class="product-card-image"><img src="<%= ctx %>/Homepage_images/27.jpg" alt="Shirt"></div>
+                <div class="product-card-body">
+                    <p>Electronic Multi meters Electromagnetic...</p>
+                    <div class="product-price-row">
+                        <span class="price-current">Rs. 500</span>
+                        <span class="badge-discount">-67%</span>
+                    </div>
+                    <span class="product-rating">&#9733;&#9733;&#9733;&#9733; (225)</span>
+                </div>
+            </article>
+            <article class="product-card">
+                <div class="product-card-image"><img src="<%= ctx %>/Homepage_images/26.jpg" alt="Shirt"></div>
+                <div class="product-card-body">
+                    <p>Autumn Winter Flannel Pen Newborn...</p>
+                    <div class="product-price-row">
+                        <span class="price-current">Rs. 2,154</span>
+                        <span class="badge-discount">-73%</span>
+                    </div>
+                    <span class="product-rating">&#9733;&#9733;&#9733;&#9733;&#9733; (15)</span>
+                </div>
+            </article>
+            <article class="product-card">
+                <div class="product-card-image"><img src="<%= ctx %>/Homepage_images/25.jpg" alt="Shirt"></div>
+                <div class="product-card-body">
+                    <p>Creative Card printer good condition...</p>
+                    <div class="product-price-row">
+                        <span class="price-current">Rs. 4,620</span>
+                        <span class="badge-discount">-70%</span>
+                    </div>
+                    <span class="product-rating">&#9733;&#9733;&#9733;&#9733; (20)</span>
+                </div>
+            </article>
+        </div>
+    </section>
 
-        </fieldset>
-    </form>
-</div>
+</main>
 
-<!--Footer-->
-    <footer>
-        <hr>
-        <ul class="foot" type="none" >
-            <li><a href="">Developer Login</a></li>
-            <li><a href="">Term of service</a></li>
-            <li><a href="privacy.html">Privacy Policy </a></li>
-            <br>
-            
-            
-        </ul>
-    
-        <hr>
-    </footer>
+<jsp:include page="/kithmalfooter.jsp" />
 
-    <!-- Connect Js file -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-    var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    spaceBetween: 10,
-    slidesPerGroup: 1,
-    loop: true,
-    loopFillGroupWithBlank: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-
-    },
-    autoplay: {
-        delay: 3500,
-        disableOnInteraction: false,
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-    effect: "creative",
-    creativeEffect: {
-        prev: {
-            shadow: true,
-            translate: [0, 0 - 400],
-        },
-        next: {
-            translate: ["100%", 0, 0],
-        },
-    }
-});
-
-    </script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        loop: true,
+        autoplay: { delay: 4000, disableOnInteraction: false },
+        pagination: { el: ".swiper-pagination", clickable: true },
+        navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+        effect: "fade",
+        fadeEffect: { crossFade: true }
+    });
+</script>
 </body>
-
 </html>
