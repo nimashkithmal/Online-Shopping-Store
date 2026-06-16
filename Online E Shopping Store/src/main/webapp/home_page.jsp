@@ -32,7 +32,7 @@
                 <div class="slide-overlay">
                     <h2>Built for Business</h2>
                     <p>Manage your orders and inventory in one place.</p>
-                    <a href="<%= ctx %>/kithmalDisplayEShopping.jsp" class="slide-cta">View Orders</a>
+                    <a href="<%= ctx %>/KithmalGetAllServlet" class="slide-cta">View Orders</a>
                 </div>
             </div>
             <div class="swiper-slide">

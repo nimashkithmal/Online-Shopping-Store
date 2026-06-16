@@ -18,7 +18,7 @@
     <div class="card-surface status-card">
         <h1>Something went wrong</h1>
         <p>We could not complete your request. Please check the form details and try again.</p>
-        <a class="btn btn-primary" href="<%= ctx %>/kithmalDisplayEShopping.jsp">Back to Manage Orders</a>
+        <a class="btn btn-primary" href="<%= ctx %>/KithmalGetAllServlet">Back to Manage Orders</a>
     </div>
 </main>
 <jsp:include page="/kithmalfooter.jsp" />

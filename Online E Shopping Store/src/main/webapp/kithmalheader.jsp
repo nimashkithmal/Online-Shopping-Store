@@ -33,8 +33,7 @@
         <li><a href="#">Education</a></li>
         <li><a href="#">Business</a></li>
         <li><a href="#">Games</a></li>
-        <li><a href="<%= ctx %>/kithmalInsert.jsp" class="<%= currentPage.contains("kithmalInsert") ? "active" : "" %>">Add Product</a></li>
-        <li><a href="<%= ctx %>/kithmalDisplayEShopping.jsp" class="<%= currentPage.contains("kithmalDisplayEShopping") || currentPage.contains("kithmalUpdate") ? "active" : "" %>">Manage Orders</a></li>
+        <li><a href="<%= ctx %>/KithmalGetAllServlet" class="<%= currentPage.contains("kithmalDisplayEShopping") || currentPage.contains("KithmalGetAllServlet") || currentPage.contains("kithmalUpdate") ? "active" : "" %>">Manage Orders</a></li>
         <li><a href="#">Health &amp; Fitness</a></li>
     </ul>
 </nav>

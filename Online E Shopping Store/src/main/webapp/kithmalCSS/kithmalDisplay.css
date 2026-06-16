@@ -1,145 +1,105 @@
 @charset "UTF-8";
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #e9ecef; /* Light gray background for a soft look */
-    margin: 0;
-    padding: 20px;
-    color: #343a40;
-    line-height: 1.6;
+.order-count {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #64748b;
+    background: #f1f5f9;
+    padding: 6px 12px;
+    border-radius: 999px;
 }
 
-h2 {
+.empty-state {
     text-align: center;
-    color: #212529; /* Darker color for headings */
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 48px 24px;
 }
 
-table {
+.empty-state h4 {
+    margin: 0 0 8px;
+    font-size: 1.25rem;
+    color: #0f172a;
+}
+
+.empty-state p {
+    margin: 0 0 16px;
+    color: #64748b;
+}
+
+.orders-table {
     width: 100%;
     border-collapse: collapse;
-    background-color: #ffffff; /* White background for the table */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    margin-bottom: 20px;
-    overflow: hidden;
+    min-width: 1100px;
 }
 
-th, td {
-    padding: 15px 20px;
+.orders-table th,
+.orders-table td {
+    padding: 12px 14px;
     text-align: left;
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 0.85rem;
+    vertical-align: top;
 }
 
-th {
-    background-color: #007bff; /* Bright blue for headers */
-    color: #ffffff;
+.orders-table th {
+    background: #0f172a;
+    color: #fff;
+    font-weight: 600;
     text-transform: uppercase;
-    font-size: 14px;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
+    font-size: 0.72rem;
+    white-space: nowrap;
 }
 
-tr:nth-child(even) {
-    background-color: #f8f9fa; /* Very light gray for even rows */
+.orders-table tbody tr:nth-child(even) td {
+    background: #f8fafc;
 }
 
-tr:hover {
-    background-color: #d1ecf1; /* Light blue hover effect */
-    cursor: pointer;
-    transform: scale(1.02);
-    transition: transform 0.3s ease;
+.orders-table tbody tr:hover td {
+    background: #eff6ff;
 }
 
-td {
-    font-size: 14px;
-    color: #495057;
+.orders-table td {
+    color: #475569;
+    max-width: 180px;
+    word-break: break-word;
 }
 
-button, input[type="submit"] {
-    border: none;
-    padding: 10px 15px;
-    font-size: 14px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+.table-wrap {
+    overflow-x: auto;
 }
 
-button {
-    background-color: #28a745; /* Green button for general actions */
-    color: #ffffff;
-}
+@media (max-width: 900px) {
+    .orders-table {
+        min-width: 0;
+    }
 
-button:hover {
-    background-color: #218838; /* Darker green on hover */
-    transform: translateY(-2px);
-}
+    .orders-table thead {
+        display: none;
+    }
 
-input[type="text"] {
-    flex: 1; /* Allow input to take remaining space */
-    padding: 10px; /* Padding for input */
-    border: 1px solid #ced4da; /* Border for input */
-    border-radius: 5px; /* Rounded corners for input */
-    margin-right: 10px; /* Space between input and button */
-    font-size: 14px; /* Font size for input */
-}
-
-input[type="submit"].delete {
-    background-color: #dc3545; /* Red button for delete actions */
-    color: #ffffff;
-    border: none; /* Remove border */
-    padding: 10px 15px; /* Padding for button */
-    font-size: 14px; /* Font size for button */
-    border-radius: 5px; /* Rounded corners for button */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s, transform 0.2s; /* Transition effects */
-}
-
-input[type="submit"].delete:hover {
-    background-color: #c82333; /* Darker red on hover */
-    transform: translateY(-2px);
-}
-
-form {
-    display: inline-block;
-    margin: 0 auto;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    table, tr, td, th {
+    .orders-table tr {
         display: block;
-        width: 100%;
+        margin-bottom: 16px;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .orders-table td {
+        display: block;
+        max-width: none;
         text-align: right;
-    }
-
-    th {
-        display: none; /* Hide header in mobile view */
-    }
-
-    td {
-        text-align: left;
-        padding: 12px;
-        border-bottom: 1px solid #dee2e6;
+        padding: 10px 14px 10px 45%;
         position: relative;
     }
 
-    td:before {
+    .orders-table td::before {
         content: attr(data-label);
         position: absolute;
-        left: 0;
-        width: 45%;
-        padding-left: 10px;
-        font-weight: bold;
-        color: #6c757d;
+        left: 14px;
+        font-weight: 600;
+        color: #64748b;
         text-transform: uppercase;
-    }
-
-    button, input[type="submit"] {
-        display: block;
-        width: 100%;
-        margin-top: 10px;
+        font-size: 0.7rem;
     }
 }
